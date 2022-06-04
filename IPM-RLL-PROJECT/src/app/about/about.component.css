@@ -1,0 +1,19 @@
+h1 {
+      margin: 2rem;
+  
+  
+  }
+  
+  .about-text {
+      background-color: rgba(66, 64, 64, 0.301);
+      padding: 10px;
+  
+  }
+  
+  #footer a {
+      text-decoration: none;
+      color: white;
+  }
+  i{
+      margin-left: 5px;
+  }
