@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 
 import { ServicesIpmComponent } from './services-ipm/services-ipm.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { UregComponent } from './ureg/ureg.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     ContactusComponent,
     AboutComponent,
-  
     ServicesIpmComponent,
-    FooterComponent
+    FooterComponent,
+    UserloginComponent,
+    AdminloginComponent,
+    UregComponent
   ],
   imports: [
     BrowserModule,
