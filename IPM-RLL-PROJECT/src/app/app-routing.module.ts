@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ServicesIpmComponent } from './services-ipm/services-ipm.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { UregComponent } from './ureg/ureg.component';
 
 
 const routes: Routes =[
@@ -34,6 +35,12 @@ const routes: Routes =[
   {
     path:'alog',
     component:AdminloginComponent
+  },
+
+  {
+    path:"ureg",
+    component:UregComponent
+    ,pathMatch:'full'
   }
 ];
 
