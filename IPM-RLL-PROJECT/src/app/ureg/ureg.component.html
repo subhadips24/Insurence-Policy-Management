@@ -1,63 +1,51 @@
 <div class="box-form">
   <div class="container">
-    <div class="title">User Registration</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full-Name</span>
-            <input type="text" placeholder="Enter your name" required>
-          </div>
-         
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone-Number</span>
-            <input type="text" placeholder="Enter your number" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
-          </div>
+  <div class="title">User Registration</div>
+  <form (ngSubmit)="UserReg()">
+  <div class="content">
+    <div >
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Full Name</span>
+          <input type="text" placeholder="Enter your name" requied [(ngModel)]="user.cname"id="cname" name="cname">
+        </div>
+       
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" placeholder="Enter your email" required [(ngModel)]="user.cemail" id="cemail" name="cemail">
+        </div>
+        <div class="input-box">
+          <span class="details">Phone Number</span>
+          <input type="text" placeholder="Enter your number" required  [(ngModel)]="user.cphno"id="cphno" name="cphno">
+        </div>
+        <div class="input-box">
+          <span class="details">Password</span>
+          <input type="password" placeholder="Enter your password" required [(ngModel)]="user.cpassword" id="cpassword" name="cpassword">
+        </div>
+       
+        <div class="input-box">
+          <span class="details">Address</span>
+          <input type="text" placeholder="Enter your Address" required [(ngModel)]="user.caddress" id="caddress" name="caddress">
+        </div>
+        <div class="input-box">
+          <span class="details">Age</span>
+          <input type="text" placeholder="Enter your Age" [(ngModel)]="user.cage"  id="cage" name="cage">
+        </div>
+       
+        <div class="input-box">
+          <span class="details">Gender</span>
+          <input type="text" placeholder="Enter your Gender" [(ngModel)]="user.cgender"  id="cgender" name="cgender">
+        </div>
+       
+      
+      </div>
+    
+      
+      <div class="button">
+        <input type="submit" value="Register">
         
-          <div class="input-box">
-            <span class="details">Address</span>
-            <input type="text" placeholder="Enter your Address" required>
-          </div>
-        
-          <div class="input-box">
-              <span class="details">Age</span>
-              <input type="number" placeholder="Enter your Age" required>
-            </div>
-         
-        </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div>
-        <div class="button">
-          <input type="submit" value="Register">
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-  </div>
-
+  </form>
+</div>

@@ -13,6 +13,9 @@ import { FooterComponent } from './footer/footer.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UregComponent } from './ureg/ureg.component';
+import {  FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { UregComponent } from './ureg/ureg.component';
     FooterComponent,
     UserloginComponent,
     AdminloginComponent,
-    UregComponent
+    UregComponent,
+    UserSucessLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
