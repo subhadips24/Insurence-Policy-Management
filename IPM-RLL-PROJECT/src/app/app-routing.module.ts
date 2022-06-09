@@ -8,6 +8,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UregComponent } from './ureg/ureg.component';
 import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.component';
+import { AdminsucessloginComponent } from './adminlogin/adminsucesslogin/adminsucesslogin.component';
 
 
 const routes: Routes =[
@@ -71,6 +72,9 @@ const routes: Routes =[
     ,component:UserSucessLoginComponent,children:[
       
     ]
+  },
+  {
+    path:"alog/adminsucesslogin", component:AdminsucessloginComponent
   }
 ];
 

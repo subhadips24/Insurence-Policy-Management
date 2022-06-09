@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSucessLoginComponent implements OnInit {
 
+
+  public cname!:any;
+  public cemail!:any;
+
   constructor() { }
 
   ngOnInit(): void {
+     this.cname=localStorage.getItem('cname');
+     this.cemail=localStorage.getItem('cemail')
+    
   }
 
 }

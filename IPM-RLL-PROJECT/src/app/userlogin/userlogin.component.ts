@@ -40,6 +40,10 @@ export class UserloginComponent implements OnInit {
       
         this.user.cphno=dta.cphno;
       
+         localStorage.setItem('cname',dta.cname);
+         localStorage.setItem('cpassword',dta.cpassword);
+         localStorage.setItem('cemail',dta.cemail);
+
 
         console.log(this.user);
          

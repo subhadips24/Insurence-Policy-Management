@@ -16,6 +16,7 @@ import { UregComponent } from './ureg/ureg.component';
 import {  FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.component';
+import { AdminsucessloginComponent } from './adminlogin/adminsucesslogin/adminsucesslogin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.
     UserloginComponent,
     AdminloginComponent,
     UregComponent,
-    UserSucessLoginComponent
+    UserSucessLoginComponent,
+    AdminsucessloginComponent
   ],
   imports: [
     BrowserModule,
