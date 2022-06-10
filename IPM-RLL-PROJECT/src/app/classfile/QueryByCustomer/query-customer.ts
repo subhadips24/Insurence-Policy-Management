@@ -1,7 +1,7 @@
 export class QueryCustomer {
 
 
-    qid!:string;
+    qid!:number;
 	
 
 	 customeremail!:string;

@@ -19,4 +19,42 @@
         </form>
 
     </div>
+
+
+    <br> <br><br>
+
+<h1 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: rgb(20, 170, 22);">Your OLD QUERY</h1>
+<hr>
+<div class="container-fluid">
+<div class="row justify-content-center mb-5 mt-5" style="background-color: rgb(106, 192, 106);">
+    <table class="table table-hover" >
+        <thead>
+            
+            <tr>
+                
+                <th scope="col">QUERY ID</th>
+                <th scope="col">QUERY TOPIC</th>
+                <th scope="col">QUERY DETAILS</th>
+                <th scope="col">QUERY DATE </th>
+                <th scope="col">REPLY</th>
+                <th scope="col">REPLY DATE</th>
+            </tr>
+
+        </thead>
+        <tbody >
+            <tr *ngFor="let s of sms">
+                <td><span>{{s.qid}}</span></td>
+                <td><span>{{s.qtopic}}</span></td>
+                <td><span>{{s.qdetails}}</span></td>
+                <td><span>{{s.qdate}}</span></td>
+                <td><span>{{s.qanswer}}</span></td>
+                <td><span>{{s.answerdate}}</span></td>
+               
+                
+
+            </tr>
+            </tbody>
+            </table>
+            </div>
+          </div>
 </div>

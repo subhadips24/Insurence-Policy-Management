@@ -99,6 +99,7 @@ apply=new ApplyPolicie();
               alert("you have applied successfully "+this.app.policyCatagory);
               this.router.navigate(['policies'])
               console.log(reply);
+              this.router.navigate(['ulog/sucessLogin'])
       },error=>{
               alert('Internal Server error..');
               console.log(error)

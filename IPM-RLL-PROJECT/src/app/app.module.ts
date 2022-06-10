@@ -11,12 +11,12 @@ import { AboutComponent } from './about/about.component';
 import { ServicesIpmComponent } from './services-ipm/services-ipm.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
-import { AdminloginComponent } from './adminlogin/adminlogin.component';
+
 import { UregComponent } from './ureg/ureg.component';
 import {  FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.component';
-import { AdminsucessloginComponent } from './adminlogin/adminsucesslogin/adminsucesslogin.component';
+
 
 
 
@@ -27,6 +27,12 @@ import { QuestionsComponent } from './user-sucess-login/questions/questions.comp
 import { PoliciesComponent } from './user-sucess-login/policies/policies.component';
 import { HistoryComponent } from './user-sucess-login/history/history.component';
 import { ApplypolicieComponent } from './applypolicie/applypolicie.component';
+
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminnavbarComponent } from './adminsuccesslogin/adminnavbar/adminnavbar.component';
+import { AdmindashboardComponent } from './adminsuccesslogin/admindashboard/admindashboard.component';
+import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admincustomers.component';
+
 
 
 
@@ -40,17 +46,21 @@ import { ApplypolicieComponent } from './applypolicie/applypolicie.component';
     ServicesIpmComponent,
     FooterComponent,
     UserloginComponent,
-    AdminloginComponent,
+
     UregComponent,
     UserSucessLoginComponent,
-    AdminsucessloginComponent,
+    AdminloginComponent,
     DashboardComponent,
     NavloginComponent,
     ProfileComponent,
     QuestionsComponent,
     ApplypolicieComponent,
     PoliciesComponent,
-    HistoryComponent
+    HistoryComponent,
+   
+    AdmindashboardComponent,
+    AdminnavbarComponent,
+    AdmincustomersComponent
   ],
   imports: [
     BrowserModule,

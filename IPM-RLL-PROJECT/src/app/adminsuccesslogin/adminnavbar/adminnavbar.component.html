@@ -1,0 +1,76 @@
+<div class="sidebar-nav">
+
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+  
+          <div class="container">
+              <!-- Mobile Menu Toggle Button -->
+  
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                  aria-controls="offcanvasNavbar">
+  
+                  <span class="navbar-toggler-icon"></span>
+  
+              </button>
+              <span class="text-light">DASHBOARD</span>
+  
+  
+  
+              <!-- Menus List -->
+  
+              <div class="bg-light offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar"
+                  aria-labelledby="offcanvasNavbarLabel">
+  
+                  <div class="offcanvas-body">
+  
+                      <ul class="navbar-nav">
+  
+                          <li><a  routerLink="dashboard"> <span class="item-text">Dashboard</span></a></li>
+  
+                          <li><a (click)="admincustomers()"><span class="item-text">Customer</span></a></li>
+  
+                          <li><a routerLink="/category"><span class="item-text">Unknown Customer</span></a></li>
+  
+                          <li><a routerLink="/policy"> <span class="item-text">Policy</span></a></li>
+  
+                          <li><a routerLink="/query"><span class="item-text">Questions</span></a></li>
+  
+                      </ul>
+  
+                  </div>
+  
+              </div>
+              <div class="btn-group ">
+  
+                  <a href="#" class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+  
+  
+  
+                      <span class="textnone"> Welcome {{adminname}}</span>
+  
+                  </a>
+  
+                  <ul class="bg-light dropdown-menu dropdown-menu-end">
+  
+                      <li><button class="dropdown-item" type="button">Change Password</button></li>
+  
+                      <li><button class="dropdown-item" type="button">Edit Profile</button></li>
+  
+                      <li><button class="dropdown-item" type="button">Settings</button></li>
+  
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+  
+                      <li><button class="dropdown-item" type="button">Sign out</button></li>
+  
+                  </ul>
+  
+              </div>
+  
+          </div>
+      </nav>
+  </div>  
+  
+  <router-outlet></router-outlet>
+  

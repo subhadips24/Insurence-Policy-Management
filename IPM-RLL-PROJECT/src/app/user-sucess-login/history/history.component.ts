@@ -37,7 +37,7 @@ export class HistoryComponent implements OnInit {
   public y:History[]=[];
   h= new History();
   
-
+//Get data for Particuler User!
   getHistory(){
     this.HttpClient.get<History[]>('http://localhost:8085/historyofapplications/'+this.cemail+'').subscribe(
       response=>{
@@ -57,6 +57,25 @@ export class HistoryComponent implements OnInit {
     )
   }
 
+  //GetData For All User------------
 
+ getAllHistory(){
+    this.HttpClient.get<History[]>('http://localhost:8085/getallaplicationofpolicy').subscribe(
+      response=>{
+        
+        console.log("done-----------------------------------------------");
+        this.y=response;
+        console.log(this.y)
+
+     
+        
+        // this.history=response;
+        // console.log(this.history);
+       
+      },error=>{
+        console.warn("not done--------------------------------")
+      }
+    )
+  }
 
 }

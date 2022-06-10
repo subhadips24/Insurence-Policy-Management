@@ -10,13 +10,32 @@ import { Router } from '@angular/router';
 })
 export class QuestionsComponent implements OnInit {
   q=new QueryCustomer
+
   constructor( private questinservice:QuestionCustomerServiceService, private router:Router) { }
+  
+  
+  sms!:QueryCustomer[];
+
 
   ngOnInit(): void {
 
       let e:any=localStorage.getItem('cemail');
       this.q.customeremail=e;
+      this.getSms();
   }
+
+  getSms(){
+
+      this.questinservice.getSmsEmail(this.q.customeremail).subscribe(data=>{
+            this.sms=data;
+            console.log(data)
+      },error=>{
+
+            alert('Internal Problem Please wait')
+      })
+
+  }
+
 
     sendQ(){ 
 
@@ -30,4 +49,6 @@ export class QuestionsComponent implements OnInit {
         
 
     }
+
+ 
 }

@@ -8,12 +8,15 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UregComponent } from './ureg/ureg.component';
 import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.component';
-import { AdminsucessloginComponent } from './adminlogin/adminsucesslogin/adminsucesslogin.component';
+
 import { DashboardComponent } from './user-sucess-login/dashboard/dashboard.component';
 import { ProfileComponent } from './user-sucess-login/profile/profile.component';
 import { PoliciesComponent } from './user-sucess-login/policies/policies.component';
 import { HistoryComponent } from './user-sucess-login/history/history.component';
 import { QuestionsComponent } from './user-sucess-login/questions/questions.component';
+import { AdmindashboardComponent } from './adminsuccesslogin/admindashboard/admindashboard.component';
+import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admincustomers.component';
+
 
 
 const routes: Routes =[
@@ -100,9 +103,19 @@ const routes: Routes =[
     
   },
   {
-    path:"alog/adminsucesslogin", component:AdminsucessloginComponent,
-   }
-   
+    path:"alog/adminsucesslogin",component:AdmindashboardComponent
+  },
+ //admin start
+ {
+  path:"dashboard" ,
+  component:AdmindashboardComponent
+},
+
+
+          {path:"admincustomers", component:AdmincustomersComponent}  
+
+//Admin End
+
    ,{
     path:"dashboard"
     ,component:DashboardComponent

@@ -17,4 +17,12 @@ export class ApplyPoliciesServiceService {
 
 
     }
+//Update Status by Admin.....
+    updateApplicationStatus(id:number,appstatus:ApplyPolicie){
+
+          return this.HttpClient.put("http://localhost:8085/updatestatus/"+id+"",appstatus)
+
+    }
+
+    
 }
