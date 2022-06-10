@@ -16,6 +16,9 @@ import { HistoryComponent } from './user-sucess-login/history/history.component'
 import { QuestionsComponent } from './user-sucess-login/questions/questions.component';
 import { AdmindashboardComponent } from './adminsuccesslogin/admindashboard/admindashboard.component';
 import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admincustomers.component';
+import { AdminPolicysComponent } from './adminsuccesslogin/admin-policys/admin-policys.component';
+import { AdminQueryComponent } from './adminsuccesslogin/admin-query/admin-query.component';
+import { AdminUnknownCustomerComponent } from './adminsuccesslogin/admin-unknown-customer/admin-unknown-customer.component';
 
 
 
@@ -106,17 +109,20 @@ const routes: Routes =[
     path:"alog/adminsucesslogin",component:AdmindashboardComponent
   },
  //admin start
- {
-  path:"dashboard" ,
-  component:AdmindashboardComponent
-},
+            {
+              path:"dashboard" ,
+              component:AdmindashboardComponent
+              },
 
 
-          {path:"admincustomers", component:AdmincustomersComponent}  
+          {path:"admincustomers", component:AdmincustomersComponent} ,
+          {path:"adminPolicys", component:AdminPolicysComponent} ,
+          {path:"adminQuery", component:AdminQueryComponent},
+          {path:"adminunknown",component:AdminUnknownCustomerComponent},
 
 //Admin End
 
-   ,{
+   {
     path:"dashboard"
     ,component:DashboardComponent
   },

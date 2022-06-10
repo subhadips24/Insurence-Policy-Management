@@ -24,15 +24,15 @@
   
                       <ul class="navbar-nav">
   
-                          <li><a  routerLink="dashboard"> <span class="item-text">Dashboard</span></a></li>
+                          <li><a  (click)="dashboard()"> <span class="item-text">Dashboard</span></a></li>
   
                           <li><a (click)="admincustomers()"><span class="item-text">Customer</span></a></li>
   
-                          <li><a routerLink="/category"><span class="item-text">Unknown Customer</span></a></li>
+                          <li><a  (click)="adminunknown()"><span class="item-text">Unknown Customer</span></a></li>
   
-                          <li><a routerLink="/policy"> <span class="item-text">Policy</span></a></li>
+                          <li><a  (click)="adminPolicys()"> <span class="item-text">Policy</span></a></li>
   
-                          <li><a routerLink="/query"><span class="item-text">Questions</span></a></li>
+                          <li><a    (click)="adminQuery()"><span class="item-text">Questions</span></a></li>
   
                       </ul>
   

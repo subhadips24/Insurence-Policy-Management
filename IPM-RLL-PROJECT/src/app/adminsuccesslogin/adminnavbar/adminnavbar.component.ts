@@ -16,8 +16,23 @@ export class AdminnavbarComponent implements OnInit {
   }
   admincustomers(){
 
-    
+
         this.router.navigate(['/admincustomers']);
   }
+  dashboard(){
+
+    this.router.navigate(['dashboard'])
+  }
+
+  adminPolicys(){
+      this.router.navigate(['adminPolicys'])
+  }
+  adminQuery(){
+    this.router.navigate(['adminQuery'])
+  }
+  adminunknown(){
+    this.router.navigate(['adminunknown'])
+  }
+
 
 }

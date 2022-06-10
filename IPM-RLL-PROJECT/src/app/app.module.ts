@@ -32,6 +32,9 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminnavbarComponent } from './adminsuccesslogin/adminnavbar/adminnavbar.component';
 import { AdmindashboardComponent } from './adminsuccesslogin/admindashboard/admindashboard.component';
 import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admincustomers.component';
+import { AdminUnknownCustomerComponent } from './adminsuccesslogin/admin-unknown-customer/admin-unknown-customer.component';
+import { AdminPolicysComponent } from './adminsuccesslogin/admin-policys/admin-policys.component';
+import { AdminQueryComponent } from './adminsuccesslogin/admin-query/admin-query.component';
 
 
 
@@ -60,7 +63,10 @@ import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admi
    
     AdmindashboardComponent,
     AdminnavbarComponent,
-    AdmincustomersComponent
+    AdmincustomersComponent,
+    AdminUnknownCustomerComponent,
+    AdminPolicysComponent,
+    AdminQueryComponent
   ],
   imports: [
     BrowserModule,
