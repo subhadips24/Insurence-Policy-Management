@@ -4,7 +4,7 @@ export class History{
 
  
 
-  public appid!: string
+  public appid!: number
   public policyPrice!: string
   public policyCatagory!:string
   public policyName!:string;
@@ -26,16 +26,20 @@ export class HistoryComponent implements OnInit {
   constructor(private HttpClient:HttpClient) { }
 
   ngOnInit(): void {
+      this.customeremai=localStorage.getItem('cemail');
+      this.cemail=this.customeremai;
     this.getHistory();
   }
 
   x!:any;
+  customeremai:any;
+  cemail!:string;
   public y:History[]=[];
   h= new History();
   
 
   getHistory(){
-    this.HttpClient.get<History[]>('http://localhost:8085/getallaplicationofpolicy').subscribe(
+    this.HttpClient.get<History[]>('http://localhost:8085/historyofapplications/'+this.cemail+'').subscribe(
       response=>{
         
         console.log("done-----------------------------------------------");
