@@ -1,0 +1,74 @@
+
+
+
+<div class="sidebar-nav" >
+
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+    
+          <div class="container" > 
+              <!-- Mobile Menu Toggle Button -->
+    
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                  aria-controls="offcanvasNavbar">
+    
+                  <span class="navbar-toggler-icon"></span>
+    
+              </button>
+              <span class="text-light">DASHBOARD</span>
+    
+    
+    
+              <!-- Menus List -->
+    
+              <div class="bg-light offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar"
+                  aria-labelledby="offcanvasNavbarLabel">
+    
+                  <div class="offcanvas-body">
+    
+                      <ul class="navbar-nav">
+    
+                          <li><a  (click)="dashboard()"> <span class="item-text">Dashboard</span></a></li>
+    
+                          <li><a (click)="profile()"><span class="item-text">Update Profile</span></a></li>
+    
+                          <li><a (click)="policies()"><span class="item-text">Apply Policies</span></a></li>
+    
+                          <li><a (click)="history()" > <span class="item-text">Policy History</span></a></li>
+    
+                          <li><a (click)="queries()"><span class="item-text">Ask your Query</span></a></li>
+    
+                      </ul>
+    
+                  </div>
+    
+              </div>
+              <div class="btn-group ">
+    
+                  <a href="#" class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+    
+    
+    
+                      <span class="textnone"> Welcome {{cname}}</span>
+    
+                  </a>
+    
+                  <ul class="bg-light dropdown-menu dropdown-menu-end">
+    
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+    
+                      <li><button class="dropdown-item" type="button" (click)="logout()">logout</button></li>
+    
+                  </ul>
+    
+              </div>
+    
+          </div>
+      </nav>
+    </div>  
+    
+
+    
+

@@ -1,0 +1,11 @@
+a{
+      cursor: pointer;
+      
+}
+li{
+      color: rgb(183, 89, 30);
+}
+a:hover{
+      
+      background-color: rgb(178, 117, 199);
+}

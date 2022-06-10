@@ -18,6 +18,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserSucessLoginComponent } from './user-sucess-login/user-sucess-login.component';
 import { AdminsucessloginComponent } from './adminlogin/adminsucesslogin/adminsucesslogin.component';
 
+
+
+import { DashboardComponent } from './user-sucess-login/dashboard/dashboard.component';
+import { ProfileComponent } from './user-sucess-login/profile/profile.component';
+import { NavloginComponent } from './user-sucess-login/navlogin/navlogin.component';
+import { QuestionsComponent } from './user-sucess-login/questions/questions.component';
+import { PoliciesComponent } from './user-sucess-login/policies/policies.component';
+import { HistoryComponent } from './user-sucess-login/history/history.component';
+import { ApplypolicieComponent } from './applypolicie/applypolicie.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +43,14 @@ import { AdminsucessloginComponent } from './adminlogin/adminsucesslogin/adminsu
     AdminloginComponent,
     UregComponent,
     UserSucessLoginComponent,
-    AdminsucessloginComponent
+    AdminsucessloginComponent,
+    DashboardComponent,
+    NavloginComponent,
+    ProfileComponent,
+    QuestionsComponent,
+    ApplypolicieComponent,
+    PoliciesComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

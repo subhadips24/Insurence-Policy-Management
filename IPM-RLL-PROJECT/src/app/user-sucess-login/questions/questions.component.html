@@ -1,0 +1,22 @@
+
+<app-navlogin></app-navlogin>
+
+
+<h1>User Query</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <form >
+            <div class="mb-3">
+                <label for="quest-type" class="form-label">Question Topic</label>
+                <input type="text" class="form-control" id="qtopic" aria-describedby="emailHelp"  [(ngModel)]="q.qtopic"  name="qtopic"  >
+            </div>
+                <div class="mb-3">
+                    <label for="quest-detail" class="form-label">Describe in brief.</label>
+                    <input type="text" class="form-control" id="qdetails" [(ngModel)]="q.qdetails" name=" qdetails">
+                </div>
+                <button (click)="sendQ()"type="submit" class="btn btn-primary"> Send </button>
+        </form>
+
+    </div>
+</div>

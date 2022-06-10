@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../classfile/user';
 import { UserviceService } from '../services/ureg/uservice.service';
 
+
 @Component({
   selector: 'app-ureg',
   templateUrl: './ureg.component.html',
@@ -10,7 +11,7 @@ import { UserviceService } from '../services/ureg/uservice.service';
 })
 export class UregComponent implements OnInit {
   user: User = new User();
-  constructor(private reService: UserviceService,private  route: Router) {}
+  constructor(private reService:UserviceService,private  route: Router) {}
 
   ngOnInit(): void {}
 

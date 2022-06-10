@@ -14,4 +14,8 @@ export class UserviceService {
       console.log(user)
     return this.http.post("http://localhost:8085/addcustomer",user);
     }
+    UpdtaeUser(user:User,emial:string){
+
+      return this.http.put("http://localhost:8085/updatecustomer/"+emial+"",user)
+    }
 }

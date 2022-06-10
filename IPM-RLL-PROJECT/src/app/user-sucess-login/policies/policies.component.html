@@ -1,0 +1,63 @@
+
+<app-navlogin></app-navlogin>
+
+<h1>First</h1>
+
+
+   
+
+<div class="container">
+    <div class="row justify-content-center mb-5 mt-5">
+        <form (ngSubmit)="applyPolicie">
+            <h2 style="color: red; text-align: center;" *ngIf="selectamount">Please Set Amount</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Policy Name</th>
+                    <th scope="col">Policy Category</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Apply this Policy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ngSubmit() -->
+                <!-- <form > -->
+                    <tr *ngFor="let plist of p">
+
+                        <th scope="row" >{{plist.pid}}</th>
+                        <td>{{plist.policyname}}</td>
+                        <td>{{plist.policycatagory}}</td>
+                        <td>
+                            <div class="mb-3">
+                             <label for="cars">Choose Amount:</label>
+            
+                                <select name="ins" [(ngModel)]="app.policyPrice" id="ins" >
+                                  
+                                    <option value="3 lac">300000</option>
+                                    <option value="5 lac">500000</option>
+                                    <option value="7 lac">700000</option>
+                                    <option value="10 lac">1000000</option>
+                                </select>
+                             </div>
+                        </td>
+
+                        <td><button class="btn btn-danger" *ngIf="checkApply"  (click)="ltt('plist.pid','plist.policyname','plist.policycatagory')"><i class="bi bi-check-circle"></i></button>
+                        <button class="btn btn-success"*ngIf="checkAfterApply"><i class="bi bi-check-circle"></i></button></td>
+
+               
+                    </tr>
+                    
+                 <!-- </form> -->
+               
+               
+            </tbody>
+            
+            
+            
+        </table>
+        </form>
+    </div>
+
+</div>
+
