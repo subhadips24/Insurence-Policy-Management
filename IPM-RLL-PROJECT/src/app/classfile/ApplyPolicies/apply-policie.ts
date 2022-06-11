@@ -1,7 +1,7 @@
 export class ApplyPolicie {
 
 
-       appid!: string
+       appid!: number
       policyPrice!: string
        policyCatagory!:string
        policyName!:string;

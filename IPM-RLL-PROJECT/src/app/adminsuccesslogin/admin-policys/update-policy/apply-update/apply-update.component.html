@@ -1,0 +1,35 @@
+
+<app-adminnavbar></app-adminnavbar>
+
+
+<br><br><br>
+
+<h1 style="color: brown; text-align: center;">Update policy</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <form (ngSubmit)="UpdateNow()">
+            <div class="mb-3">
+                <label for="cars">Choose Category:</label>
+
+                <!-- <select  name="policycatagory" id="policycatagory"> -->
+                <select [(ngModel)]="updateData.policycatagory" name="policycatagory" id="policycatagory">
+                    <option value="Life Insurance" selected>Life Insurance</option>
+                    <option value="travel Insurance">travel Insurance</option>
+                    <option value="motor Insurance">motor Insurance</option>
+                    <option value="Health Insurance">Health Insurance</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <!-- <label for="quest-detail" class="form-label">Policy Name</label>
+                <input name="policyname" id="policyname" type="text"
+                    class="form-control"> -->
+                <input [(ngModel)]="updateData.policyname" name="policyname"  id="policyname" type="text"
+                    class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" >Add Policy</button>
+        </form>
+    </div>
+</div>
+

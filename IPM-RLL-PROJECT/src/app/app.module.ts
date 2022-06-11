@@ -35,11 +35,22 @@ import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admi
 import { AdminUnknownCustomerComponent } from './adminsuccesslogin/admin-unknown-customer/admin-unknown-customer.component';
 import { AdminPolicysComponent } from './adminsuccesslogin/admin-policys/admin-policys.component';
 import { AdminQueryComponent } from './adminsuccesslogin/admin-query/admin-query.component';
-import { NgToastComponent, NgToastModule, NgToastService } from 'ng-angular-popup';
+
 import { AddAdminByAdminComponent } from './adminsuccesslogin/add-admin-by-admin/add-admin-by-admin.component';
 import { ViewadmisComponent } from './adminsuccesslogin/addAdminByAdmin/viewadmis/viewadmis.component';
 import { AddnewadminComponent } from './adminsuccesslogin/addAdminByAdmin/addnewadmin/addnewadmin.component';
 import { ReplyComponent } from './adminsuccesslogin/admin-query/reply/reply.component';
+
+import { AddPolicyComponent } from './adminsuccesslogin/admin-policys/add-policy/add-policy.component';
+import { UpdatePolicyComponent } from './adminsuccesslogin/admin-policys/update-policy/update-policy.component';
+import { DeletePolicyComponent } from './adminsuccesslogin/admin-policys/delete-policy/delete-policy.component';
+import { AppliedPolicyHolderComponent } from './adminsuccesslogin/admin-policys/applied-policy-holder/applied-policy-holder.component';
+import { ApproveddPolicyHolderComponent } from './adminsuccesslogin/admin-policys/approvedd-policy-holder/approvedd-policy-holder.component';
+import { RejectedPolicyHolderComponent } from './adminsuccesslogin/admin-policys/rejected-policy-holder/rejected-policy-holder.component';
+import { WaitingpPolicyHolderComponent } from './adminsuccesslogin/admin-policys/waitingp-policy-holder/waitingp-policy-holder.component';
+import { PolicysViewByAdminComponent } from './adminsuccesslogin/admin-policys/policys-view-by-admin/policys-view-by-admin.component';
+import { ApplyUpdateComponent } from './adminsuccesslogin/admin-policys/update-policy/apply-update/apply-update.component';
+
 
 
 
@@ -78,6 +89,17 @@ import { ReplyComponent } from './adminsuccesslogin/admin-query/reply/reply.comp
     ViewadmisComponent,
     AddnewadminComponent,
     ReplyComponent,
+   
+    AddPolicyComponent,
+    UpdatePolicyComponent,
+    DeletePolicyComponent,
+    AppliedPolicyHolderComponent,
+    ApproveddPolicyHolderComponent,
+    RejectedPolicyHolderComponent,
+    WaitingpPolicyHolderComponent,
+    PolicysViewByAdminComponent,
+    ApplyUpdateComponent,
+  
   
   
   ],

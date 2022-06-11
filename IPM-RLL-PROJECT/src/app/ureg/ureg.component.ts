@@ -34,7 +34,13 @@ export class UregComponent implements OnInit {
         }else{
                 
               this.reService.registrionProcess(this.user).subscribe((data=>{
-                  alert("You Have Sucessfully Register")
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'Thanks For Register '+this.user.cname,
+                  showConfirmButton: false,
+                  timer: 2500
+                })
                   this.route.navigate(["/ulog"]);
               }),error=>{
                     Swal.fire({

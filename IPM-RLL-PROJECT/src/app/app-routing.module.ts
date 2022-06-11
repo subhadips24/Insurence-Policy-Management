@@ -24,6 +24,19 @@ import { AddnewadminComponent } from './adminsuccesslogin/addAdminByAdmin/addnew
 import { ViewadmisComponent } from './adminsuccesslogin/addAdminByAdmin/viewadmis/viewadmis.component';
 import { ReplyComponent } from './adminsuccesslogin/admin-query/reply/reply.component';
 
+import { AddPolicyComponent } from './adminsuccesslogin/admin-policys/add-policy/add-policy.component';
+import { UpdatePolicyComponent } from './adminsuccesslogin/admin-policys/update-policy/update-policy.component';
+import { DeletePolicyComponent } from './adminsuccesslogin/admin-policys/delete-policy/delete-policy.component';
+import { AppliedPolicyHolderComponent } from './adminsuccesslogin/admin-policys/applied-policy-holder/applied-policy-holder.component';
+import { ApproveddPolicyHolderComponent } from './adminsuccesslogin/admin-policys/approvedd-policy-holder/approvedd-policy-holder.component';
+import { ReplaySubject } from 'rxjs';
+import { RejectedPolicyHolderComponent } from './adminsuccesslogin/admin-policys/rejected-policy-holder/rejected-policy-holder.component';
+import { WaitingpPolicyHolderComponent } from './adminsuccesslogin/admin-policys/waitingp-policy-holder/waitingp-policy-holder.component';
+import { PolicysViewByAdminComponent } from './adminsuccesslogin/admin-policys/policys-view-by-admin/policys-view-by-admin.component';
+import { ApplyUpdateComponent } from './adminsuccesslogin/admin-policys/update-policy/apply-update/apply-update.component';
+
+
+
 
 
 const routes: Routes =[
@@ -155,7 +168,41 @@ const routes: Routes =[
     {
         path:"adminQuery/reply" , component:ReplyComponent
 
+    },
+
+    //Admin Policys Works----------
+    {
+      path:"viewPolicy",component:PolicysViewByAdminComponent
+    },
+    {
+      path:"addPolicy",component:AddPolicyComponent
+    },
+    {
+      path:"updatePolicy",component:UpdatePolicyComponent
+    },
+    {
+      path:"deletePolicy",component:DeletePolicyComponent
+    },
+    {
+      path:"appliedUsers",component:AppliedPolicyHolderComponent
+
+    },
+     {
+      path:"approvedUsers",component:ApproveddPolicyHolderComponent
+      
+    },
+     {
+      path:"rejectedUsers",component:RejectedPolicyHolderComponent
+      
+    },
+    {
+      path:"waitingUsers",component:WaitingpPolicyHolderComponent
+      
+    },{
+      path:"editpolicy", component:ApplyUpdateComponent
     }
+    
+
   
 ];
 

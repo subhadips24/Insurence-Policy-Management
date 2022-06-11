@@ -6,7 +6,7 @@
 <div class="row justify-content-evenly pt-2 pb-4 " id="contact" style="background-image: linear-gradient(170deg, #aea84e 0%, #7999cb 50%, #50b855 75%);">
   <div class="col-md-5 mt-5">
     <h3 class="mb-3">Contact Form</h3>
-    <form>
+    <form  (ngSubmit)="sendSms()">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Full Name</label>
         <input
@@ -14,15 +14,20 @@
           class="form-control"
           id="exampleInputEmail1"
           aria-describedby="nameHelp"
+          [(ngModel)]="u.ucustomername"
+          name="ucustomername" id="ucustomername"
         />
         <div id="nameHelp" class="form-text">
           We'll never share your name with anyone else.
         </div>
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <label for="exampleInputEmail1" class="form-label" >Email address</label>
         <input
           type="email"
+          [(ngModel)]="u.usmsemail"
+          name="usmsemail"
+          id="usmsemail"
           class="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
@@ -39,9 +44,14 @@
           class="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
+          [(ngModel)]="u.sms"
+          name="sms"
+          id="sms"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success mx-5" >Submit</button>
+
+      <button type="reset" class="btn btn-warning" >Reset</button>
     </form>
   </div>
   <div class="col-md-5 mt-5">

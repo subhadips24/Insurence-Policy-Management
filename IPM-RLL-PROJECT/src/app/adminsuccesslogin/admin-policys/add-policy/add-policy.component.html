@@ -1,0 +1,34 @@
+
+<app-adminnavbar></app-adminnavbar>
+<br><br> <br>
+<h1 style="text-align: center; color: rgb(9, 131, 206);">Add Policy</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <form (ngSubmit)="addNow()">
+            <div class="mb-3">
+                <label for="cars">Choose Category:</label>
+
+                <!-- <select  name="policycatagory" id="policycatagory"> -->
+                <select [(ngModel)]="addData.policycatagory" name="policycatagory" id="policycatagory">
+                    <option value="Life Insurance" selected>Life Insurance</option>
+                    <option value="travel Insurance">travel Insurance</option>
+                    <option value="motor Insurance">motor Insurance</option>
+                    <option value="Health Insurance">Health Insurance</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <!-- <label for="quest-detail" class="form-label">Policy Name</label>
+                <input name="policyname" id="policyname" type="text"
+                    class="form-control"> -->
+                <input [(ngModel)]="addData.policyname" name="policyname"  id="policyname" type="text"
+                    class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" >Add Policy</button>
+            <br>
+        </form>
+
+    </div>
+</div>
+<br>
