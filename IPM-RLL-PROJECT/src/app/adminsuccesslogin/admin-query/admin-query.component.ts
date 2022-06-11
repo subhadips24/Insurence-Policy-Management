@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { QueryCustomer } from '../../classfile/QueryByCustomer/query-customer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-query',
@@ -6,10 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-query.component.css']
 })
 export class AdminQueryComponent implements OnInit {
-
-  constructor() { }
+  public allQueryData!:QueryCustomer[];
+  constructor(private httpClient:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+    this.httpClient.get<any>('http://localhost:8085/findQuestionsBystatus').subscribe(
+      response=> {
+
+        this.allQueryData=response;
+        console.log(this.allQueryData);
+        
+      })
+
+   
+
+
+  }
+
+  replyId!:number;
+  replySms(id:number){
+
+     (localStorage.setItem("replyid",""+id));
+
+
+     this.router.navigate(['adminQuery/reply']);
+
+
   }
 
 }

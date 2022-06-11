@@ -1,0 +1,60 @@
+
+<app-adminnavbar></app-adminnavbar>
+
+<br><br><br>
+
+<div class="container">
+
+      <div class="row justify-content-center mb-5 mt-5"  style="color:black;font-size: large; background-color: rgb(190, 144, 234)">
+          <form>
+             
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th scope="col"> Id</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">PhNo</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Address</th>
+
+                      
+                      <th scope="col">DOJ</th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                     
+                  </tr>
+              </thead>
+      
+              <tbody>
+                  <!-- ngSubmit() -->
+                  <!-- <form > -->
+                      <tr *ngFor="let alist of admins">
+  
+                          <th scope="row" >{{alist.adminid}}</th>
+                          <td>{{alist.adminname}}</td>
+                          <td>{{alist.adminemail}}</td>
+                          <td>{{alist.adminphno}}</td>
+                          <td>{{alist.admingender}}</td>
+                          <td>{{alist.adminaddress}}</td>
+                          <td>{{alist.adminJoinDate}}</td>
+                         
+                          <td><button class="btn btn-danger" (click)="delete(alist.adminid)">Delete</button></td>
+
+                        
+                    
+                 
+                      </tr>
+                      
+                   <!-- </form> -->
+                 
+                 
+              </tbody>
+              
+              
+              
+          </table>
+          </form>
+      </div>
+  
+  </div>

@@ -1,2 +1,47 @@
 <app-adminnavbar></app-adminnavbar>
-<p>admin-query works!</p>
+<h1>First</h1>
+<div class="container">
+    <div class="row justify-content-center mb-5 mt-5">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Q_ID</th>
+                    <th scope="col">Customer Email</th>
+                    <th scope="col">Question Topic</th>
+                    <th scope="col">Question Details</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">reply</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let q of allQueryData">
+                    <th scope="row">{{q.qid}}</th>
+                    <td>{{q.customeremail}}</td>
+                    <td>{{q.qtopic}}</td>
+                    <td>{{q.qdetails}}</td>
+                    <td>{{q.qdate}}</td>
+                    <td><a><button class="btn btn-info" (click)="replySms(q.qid)"><i class="bi bi-reply-fill" ></i></button></a></td>
+                    
+                </tr>
+                <!-- <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>How can i withdrow my money ?</td>
+                    <td>None</td>
+                    <td>06/06/2022</td>
+                    <td><a  routerLink="/replyUser"><button class="btn btn-info"><i class="bi bi-reply-fill"></i></button></a></td>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>How can i withdrow my money ?</td>
+                    <td>None</td>
+                    <td>06/06/2022</td>
+                    <td><a  routerLink="/replyUser"><button class="btn btn-info"><i class="bi bi-reply-fill"></i></button></a></td>
+               
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AdminserviceService } from '../services/adminlogin/adminservice.service';
 import { Admin } from '../classfile/admin';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adminlogin',
@@ -20,7 +21,7 @@ export class AdminloginComponent implements OnInit {
 
   alogin(){
       this.aservice.loginAdmin(this.admin).subscribe(dta=>{
-          alert("You have SucessFully Login "+this.admin.adminemail);
+         // alert("You have SucessFully Login "+this.admin.adminemail);
 
           this.admin.adminJoinDate=dta.adminJoinDate;
           this.admin.adminaddress=dta.adminaddress;
@@ -40,14 +41,44 @@ export class AdminloginComponent implements OnInit {
            localStorage.setItem("adminpassword",this.admin.adminpassword);
            localStorage.setItem("adminname",this.admin.adminname);
 
+
+           Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Thank You For Login 👍  ',
+            text:""+dta.adminname+"",
+            showConfirmButton: false,
+            timer: 8000
+          })
+
           this.router.navigate(['alog/adminsucesslogin'])
        
       },error=>{
 
-            alert("Please Check Your Credencial....");
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Bad Credential!! Check Your Email and Password',
+          
+        })
+
+           // alert("Please Check Your Credencial....");
       })
 
       
+  }
+  logout(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Logout SuccessFully 🏠 ',
+      
+      showConfirmButton: false,
+      timer: 8000
+    })
+    localStorage.clear();
+    this.router.navigate([""])
   }
    
   

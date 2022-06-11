@@ -1,0 +1,20 @@
+
+<app-adminnavbar></app-adminnavbar>
+<br>
+
+
+<div class="container">
+  <div class="row mt-5">
+    <!-- <form (ngSubmit)="onSubmit(ansForm)" #ansForm='ngForm'> -->
+    <form (ngSubmit)="sendAns()" >
+      <div class="mb-3">
+        <label for="FormControl" class="form-label" >REPLY USER </label>
+        <textarea class="form-control" type="text" id="qanswer" name="qanswer" rows="3" 
+        [(ngModel)]="questions.qanswer" ></textarea>
+        <br> <br>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+</div>

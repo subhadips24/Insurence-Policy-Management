@@ -19,6 +19,10 @@ import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admi
 import { AdminPolicysComponent } from './adminsuccesslogin/admin-policys/admin-policys.component';
 import { AdminQueryComponent } from './adminsuccesslogin/admin-query/admin-query.component';
 import { AdminUnknownCustomerComponent } from './adminsuccesslogin/admin-unknown-customer/admin-unknown-customer.component';
+import { AddAdminByAdminComponent } from './adminsuccesslogin/add-admin-by-admin/add-admin-by-admin.component';
+import { AddnewadminComponent } from './adminsuccesslogin/addAdminByAdmin/addnewadmin/addnewadmin.component';
+import { ViewadmisComponent } from './adminsuccesslogin/addAdminByAdmin/viewadmis/viewadmis.component';
+import { ReplyComponent } from './adminsuccesslogin/admin-query/reply/reply.component';
 
 
 
@@ -139,7 +143,19 @@ const routes: Routes =[
   },
   {
       path:"queries" ,component:QuestionsComponent
-  }
+  },
+  {
+    path:"newadmin", component:AddAdminByAdminComponent
+  },
+  {
+    path:"addadmin",component:AddnewadminComponent  },
+    {
+      path:"viewadmins" ,component:ViewadmisComponent
+    },
+    {
+        path:"adminQuery/reply" , component:ReplyComponent
+
+    }
   
 ];
 

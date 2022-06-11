@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QueryCustomer } from 'src/app/classfile/QueryByCustomer/query-customer';
 import { QuestionCustomerServiceService } from 'src/app/services/QuestionCustomerService/question-customer-service.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-questions',
@@ -36,14 +37,48 @@ export class QuestionsComponent implements OnInit {
 
   }
 
+  
 
     sendQ(){ 
 
-      this.questinservice.sendSms(this.q).subscribe(query=>{
-            alert("You have Successfully Send sms ")
-            this.router.navigate(['ulog/sucessLogin'])
 
-      },error=>{alert("Internal Server error... Pls Wait")})
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Dou You want Send Query!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Send,It!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+     
+          this.questinservice.sendSms(this.q).subscribe(query=>{
+            
+            this.router.navigate(['queries']).then(()=>{
+                window.location.reload()
+              })
+            
+          Swal.fire(
+            'Sended!',
+            'Your Query has been Sended.',
+            'success'
+          )
+
+      },error=>{
+
+        Swal.fire(
+          'Opps!',
+          'Something Wend Wrong Please wait',
+          'error'
+        )
+      })
+        }
+      })
+
+
+
 
 
         

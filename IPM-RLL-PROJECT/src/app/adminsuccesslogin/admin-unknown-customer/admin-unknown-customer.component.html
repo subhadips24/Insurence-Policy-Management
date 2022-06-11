@@ -1,3 +1,43 @@
 
 <app-adminnavbar></app-adminnavbar>
-<p>admin-unknown-customer works!</p>
+<h1>First</h1>
+<div class="container">
+    <div class="row justify-content-center mb-5 mt-5">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">User Name</th>
+                    <th scope="col">User Email</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c1 of allUnknownData">
+                    <td>{{c1.ucustomername}}</td>
+                    <td>{{c1.usmsemail}}</td>
+                    <td>{{c1.sms}}</td>  
+                </tr> 
+                <!-- <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>male</td>
+                    <td>90########</td>
+                    <td>villa-7, street-park, USA</td>
+                    <td><button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>male</td>
+                    <td>90########</td>
+                    <td>villa-7, street-park, USA</td>
+                    <td><button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
+                    
+                     
+                    
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -6,6 +6,9 @@ import { UserLoginService } from '../services/loginservice/user-login.service';
 import { ServicesIpmComponent } from '../services-ipm/services-ipm.component';
 import { AppComponent } from '../app.component';
 import { HttpStatusCode } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-userlogin',
@@ -45,15 +48,31 @@ export class UserloginComponent implements OnInit {
          localStorage.setItem('cemail',dta.cemail);
 
 
+         
+       
         console.log(this.user);
          
+        Swal.fire({
+         position: 'top-end',
+         icon: 'success',
+         title: 'Thank You For Login 👍  ',
+         text:""+dta.cname+"",
+         showConfirmButton: false,
+         timer: 8000
+       })
 
-        alert("Successfuly login");
         this.route.navigate(['ulog/sucessLogin']);
        
        
      },error=>{
-        alert("Chek your Credencial Please")
+       
+
+       Swal.fire({
+         icon: 'error',
+         title: 'Oops...',
+         text: 'Bad Credential!! Check Your Email and Password',
+         footer: '<a href="ureg">Are You New ?Then Please Click!</a>'
+       })
         
         this.route.navigate(['/ulog']);  
      });

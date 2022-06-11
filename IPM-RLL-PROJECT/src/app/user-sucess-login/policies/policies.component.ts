@@ -7,6 +7,7 @@ import { PolicysService } from 'src/app/services/Policy/policys.service';
 import { Policye } from 'src/app/classfile/Policy/policye';
 import { History } from '../history/history.component';
 import { Type } from '@angular/compiler';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-policies',
@@ -96,10 +97,20 @@ apply=new ApplyPolicie();
     console.log("=============")
     console.warn(this.app)
       this.applypolicyService.appPolicy(this.app).subscribe(reply=>{
-              alert("you have applied successfully "+this.app.policyCatagory);
-              this.router.navigate(['policies'])
+             // alert("you have applied successfully "+this.app.policyCatagory);
+              
+              Swal.fire({
+                title: 'Thanks For Apply </br>'+this.app.policyName,
+                showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              })
               console.log(reply);
-              this.router.navigate(['ulog/sucessLogin'])
+
+              this.router.navigate(['history'])
       },error=>{
               alert('Internal Server error..');
               console.log(error)

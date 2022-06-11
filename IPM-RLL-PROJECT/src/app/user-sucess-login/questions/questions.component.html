@@ -1,60 +1,88 @@
-
 <app-navlogin></app-navlogin>
-
 
 <h1>User Query</h1>
 <div class="container mt-5">
-    <div class="row justify-content-center">
-
-        <form >
-            <div class="mb-3">
-                <label for="quest-type" class="form-label">Question Topic</label>
-                <input type="text" class="form-control" id="qtopic" aria-describedby="emailHelp"  [(ngModel)]="q.qtopic"  name="qtopic"  >
-            </div>
-                <div class="mb-3">
-                    <label for="quest-detail" class="form-label">Describe in brief.</label>
-                    <input type="text" class="form-control" id="qdetails" [(ngModel)]="q.qdetails" name=" qdetails">
-                </div>
-                <button (click)="sendQ()"type="submit" class="btn btn-primary"> Send </button>
+  <div class="row justify-content-center">
+        <form>
+        <div class="mb-3">
+            <label for="quest-type" class="form-label">Question Topic</label>
+            <input
+            type="text"
+            class="form-control"
+            id="qtopic"
+            aria-describedby="emailHelp"
+            [(ngModel)]="q.qtopic"
+            name="qtopic"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="quest-detail" class="form-label">Describe in brief.</label>
+            <input
+            type="text"
+            class="form-control"
+            id="qdetails"
+            [(ngModel)]="q.qdetails"
+            name=" qdetails"
+            />
+        </div>
+        <button (click)="sendQ()" type="submit" class="btn btn-primary">
+            Send
+        </button>
         </form>
+  </div>
 
-    </div>
+  <br >
+  <br ><br >
 
-
-    <br> <br><br>
-
-<h1 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: rgb(20, 170, 22);">Your OLD QUERY</h1>
-<hr>
-<div class="container-fluid">
-<div class="row justify-content-center mb-5 mt-5" style="background-color: rgb(106, 192, 106);">
-    <table class="table table-hover" >
-        <thead>
-            
+  <h1
+    style="
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: rgb(20, 170, 22);
+    "
+  >
+    Your OLD QUERY
+  </h1>
+  <hr />
+  <div class="container">
+        <div
+        class="row justify-content-center mb-5 mt-5"
+        style="background-color: rgb(106, 192, 106)"
+        >
+        <table class="table table-hover">
+            <thead>
             <tr>
-                
                 <th scope="col">QUERY ID</th>
                 <th scope="col">QUERY TOPIC</th>
                 <th scope="col">QUERY DETAILS</th>
-                <th scope="col">QUERY DATE </th>
+                <th scope="col">QUERY DATE</th>
                 <th scope="col">REPLY</th>
                 <th scope="col">REPLY DATE</th>
             </tr>
-
-        </thead>
-        <tbody >
+            </thead>
+            <tbody>
             <tr *ngFor="let s of sms">
-                <td><span>{{s.qid}}</span></td>
-                <td><span>{{s.qtopic}}</span></td>
-                <td><span>{{s.qdetails}}</span></td>
-                <td><span>{{s.qdate}}</span></td>
-                <td><span>{{s.qanswer}}</span></td>
-                <td><span>{{s.answerdate}}</span></td>
-               
-                
-
+                <td>
+                <span>{{ s.qid }}</span>
+                </td>
+                <td>
+                <span>{{ s.qtopic }}</span>
+                </td>
+                <td>
+                <span>{{ s.qdetails }}</span>
+                </td>
+                <td>
+                <span>{{ s.qdate }}</span>
+                </td>
+                <td>
+                <span>{{ s.qanswer }}</span>
+                </td>
+                <td>
+                <span>{{ s.answerdate }}</span>
+                </td>
             </tr>
             </tbody>
-            </table>
-            </div>
-          </div>
+        </table>
+        </div>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navlogin',
@@ -44,6 +45,14 @@ export class NavloginComponent implements OnInit {
       this.router.navigate(['ulog/sucessLogin'])
   }
   logout(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Logout SuccessFully 🏠 ',
+      
+      showConfirmButton: false,
+      timer: 8000
+    })
     localStorage.clear();
     this.router.navigate([""])
   }

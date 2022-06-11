@@ -35,6 +35,13 @@ import { AdmincustomersComponent } from './adminsuccesslogin/admincustomers/admi
 import { AdminUnknownCustomerComponent } from './adminsuccesslogin/admin-unknown-customer/admin-unknown-customer.component';
 import { AdminPolicysComponent } from './adminsuccesslogin/admin-policys/admin-policys.component';
 import { AdminQueryComponent } from './adminsuccesslogin/admin-query/admin-query.component';
+import { NgToastComponent, NgToastModule, NgToastService } from 'ng-angular-popup';
+import { AddAdminByAdminComponent } from './adminsuccesslogin/add-admin-by-admin/add-admin-by-admin.component';
+import { ViewadmisComponent } from './adminsuccesslogin/addAdminByAdmin/viewadmis/viewadmis.component';
+import { AddnewadminComponent } from './adminsuccesslogin/addAdminByAdmin/addnewadmin/addnewadmin.component';
+import { ReplyComponent } from './adminsuccesslogin/admin-query/reply/reply.component';
+
+
 
 
 
@@ -66,13 +73,21 @@ import { AdminQueryComponent } from './adminsuccesslogin/admin-query/admin-query
     AdmincustomersComponent,
     AdminUnknownCustomerComponent,
     AdminPolicysComponent,
-    AdminQueryComponent
+    AdminQueryComponent,
+    AddAdminByAdminComponent,
+    ViewadmisComponent,
+    AddnewadminComponent,
+    ReplyComponent,
+  
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

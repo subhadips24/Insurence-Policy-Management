@@ -1,11 +1,15 @@
 a{
       cursor: pointer;
-      
+      text-decoration: none;
 }
-li{
-      color: rgb(183, 89, 30);
-}
-a:hover{
-      
-      background-color: rgb(178, 117, 199);
-}
+
+li,a{
+      color: rgb(138, 24, 251);
+      padding-top: 15px;
+    }
+    li:hover,a:hover{
+      /* background-color: rgb(160, 158, 158); */
+      color: #eb8b0d;
+      font-weight: bold;
+      padding-top: 20px;
+    } 

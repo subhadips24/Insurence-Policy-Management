@@ -53,5 +53,19 @@
       top: 3px;
   
   }
+
+  a{
+    cursor: pointer;
+  }
+  li{
+    color: rgb(138, 24, 251);
+    font-weight: bold;
+  }
+  li:hover{
+
+    color: #eb8b0d;
+    font-weight: bold;
+   
+  }
   
   

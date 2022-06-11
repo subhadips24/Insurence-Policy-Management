@@ -3,6 +3,7 @@ import { Route, Router } from '@angular/router';
 import { User } from 'src/app/classfile/user';
 import { UserLoginService } from 'src/app/services/loginservice/user-login.service';
 import { UserviceService } from 'src/app/services/ureg/uservice.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -29,21 +30,50 @@ export class ProfileComponent implements OnInit {
  
 
   updateService(){
-    this.userservice.UpdtaeUser(this.user,this.user.cemail).subscribe((update=>{
 
-            alert("Success Fully Update your profile ");
-            this.roter.navigate(['ulog/sucessLogin'])
+
+    Swal.fire({
+      title: 'Do you want to save the changes?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+
+          //Send Data
+          this.userservice.UpdtaeUser(this.user,this.user.cemail).subscribe((update=>{
+
+        
+            this.roter.navigate(['ulog'])
     }),error=>{
           // console.log(error);
           
           // alert("Somethibg Wrong with Server...Please Wait")
           // this.roter.navigate(['profile'])
 
-          alert("Success Fully Update your profile ");
-          this.roter.navigate(['ulog/sucessLogin'])
+        
+          this.roter.navigate(['ulog'])
           
           
     })
+
+      //Show Alerrt
+
+        Swal.fire('Saved!', '', 'success')
+
+      } else if (result.isDenied) {
+
+        Swal.fire('Changes are not saved', '', 'info')
+      }
+    })
+
+
+
+
+    
 
   }
   UserUpdate(){

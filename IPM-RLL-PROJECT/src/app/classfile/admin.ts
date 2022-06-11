@@ -9,6 +9,7 @@ export class Admin {
       admingender!:string;
       adminaddress!:string;
       adminJoinDate!:string;
+      seniormangeremail!:string;
 
 
 }

@@ -2,3 +2,7 @@ tr{
       font-size: medium;
       color: rgb(204, 85, 30);
 }
+
+*{
+      scroll-behavior: smooth;
+}

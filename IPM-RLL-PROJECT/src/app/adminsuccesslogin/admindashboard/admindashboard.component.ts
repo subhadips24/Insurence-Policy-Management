@@ -38,7 +38,7 @@ export class AdmindashboardComponent implements OnInit {
 
 
 
-      this.httpClient.get<number>('http://localhost:8085/countCustomerQuestions').subscribe(
+      this.httpClient.get<number>('http://localhost:8085/countNotReply').subscribe(
         response=> {
           this.countCustomerQuestions=response;
           console.log(this.countCustomerQuestions);
