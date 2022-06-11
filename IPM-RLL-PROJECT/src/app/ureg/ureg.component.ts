@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../classfile/user';
 import { UserviceService } from '../services/ureg/uservice.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -17,13 +18,35 @@ export class UregComponent implements OnInit {
 
   UserReg() {
 
-        this.reService.registrionProcess(this.user).subscribe((data=>{
-            alert("You Have Sucessfully Register")
-            this.route.navigate(["/ulog"]);
-        }),error=>{
-          alert("You have alredy registered")
-          this.route.navigate(["/ulog"]);
-        });
+
+        if(this.user.caddress===undefined || this.user.cage===undefined|| this.user.cemail===undefined||this.user.cgender===undefined||this.user.cname===undefined|| this.user.cpassword===undefined||this.user.cphno===undefined){
+      
+            console.warn(this.user);
+            
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...😠',
+            text: "Please Fill Up Every Field!!!!!✍️",
+          
+          })
+
+         
+        }else{
+                
+              this.reService.registrionProcess(this.user).subscribe((data=>{
+                  alert("You Have Sucessfully Register")
+                  this.route.navigate(["/ulog"]);
+              }),error=>{
+                    Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'You Have Alredy Account!! 👍',
+            
+          })
+                this.route.navigate(["/ulog"]);
+              });
+      
+      }
        //console.log("Hit it");
        
   }
