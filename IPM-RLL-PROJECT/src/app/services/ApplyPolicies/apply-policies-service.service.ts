@@ -24,5 +24,13 @@ export class ApplyPoliciesServiceService {
 
     }
 
+    //Delete Appliction !
+    deleteApplictionByID(aid:number)
+    {
+        return this.HttpClient.delete("http://localhost:8085/deleteaplication/"+aid)
+    }
+
+
+
     
 }

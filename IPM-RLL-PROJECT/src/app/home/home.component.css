@@ -3,3 +3,6 @@ img{
       width: 70%;
       padding-left:px;
 }
+h1{
+      text-shadow: 3px,3px red;
+}

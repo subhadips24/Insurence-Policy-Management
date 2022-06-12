@@ -12,6 +12,7 @@
                     <th scope="col">Policy Price</th>
                     <th scope="col">Applied date</th>
                     <th scope="col">Status</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,8 +23,13 @@
                     <td>{{a1.policyPrice}}</td>
                     <td>{{a1.policyapplydate}}</td>
                     <td>{{a1.status}}</td>
+                    <td></td>
+                    <td><button class="btn btn-danger"  
+                        (click)="deleteRejected(a1.appid)"><i class="bi bi-trash-fill"></i></button></td>
+                   
                 
                 </tr>
+               
                 <!-- <tr>
                     <th scope="row">1</th>
                     <td>SBI Life Insurance</td>

@@ -54,26 +54,33 @@ export class QuestionsComponent implements OnInit {
         if (result.isConfirmed) {
 
      
-          this.questinservice.sendSms(this.q).subscribe(query=>{
+          this.questinservice.sendSms(this.q).subscribe(query=>
+            {
             
+          
+            
+                Swal.fire(
+                  'Sended!',
+                  'Your Query has been Sended.',
+                  'success'
+                )
+
+            },error=>{
+
+              Swal.fire(
+                'Opps!',
+                'Something Wend Wrong Please wait',
+                'error'
+              )
+            })
+            setTimeout(()=>{
+
+                    
             this.router.navigate(['queries']).then(()=>{
-                window.location.reload()
-              })
-            
-          Swal.fire(
-            'Sended!',
-            'Your Query has been Sended.',
-            'success'
-          )
+              window.location.reload()
+            })
 
-      },error=>{
-
-        Swal.fire(
-          'Opps!',
-          'Something Wend Wrong Please wait',
-          'error'
-        )
-      })
+            },3000)
         }
       })
 

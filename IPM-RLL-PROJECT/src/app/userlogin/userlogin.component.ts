@@ -74,7 +74,7 @@ export class UserloginComponent implements OnInit {
          icon: 'error',
          title: 'Oops...',
          text: 'Bad Credential!! Check Your Email and Password',
-         footer: '<a href="ureg">Are You New ?Then Please Click!</a>'
+         footer: '<a href="ureg">Are You New User ? Click Here!</a>'
        })
         
         this.route.navigate(['/ulog']);  

@@ -109,11 +109,28 @@ apply=new ApplyPolicie();
                 }
               })
               console.log(reply);
+              setTimeout(()=>{
+                   this.router.navigate(['history'])
 
-              this.router.navigate(['history'])
+              },3000)
+
+             
       },error=>{
-              alert('Internal Server error..');
-              console.log(error)
+        Swal.fire({
+
+          icon: 'error',
+          title: 'Oops...You try to apply above your Requerment 👎😢',
+          text: ' Wait for Admin Action 👨',
+          
+        })
+        setTimeout(()=>{
+          this.router.navigate(['history'])
+
+     },5000)
+
+
+
+
       })
   }
 
