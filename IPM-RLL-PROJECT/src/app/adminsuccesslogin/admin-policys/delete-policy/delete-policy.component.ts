@@ -3,6 +3,7 @@ import { ApplyPolicie } from '../../../classfile/ApplyPolicies/apply-policie';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Policye } from '../../../classfile/Policy/policye';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-delete-policy',
@@ -19,6 +20,18 @@ export class DeletePolicyComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
+
     this.httpClient.get<any>('http://localhost:8085/getpolicys').subscribe(
       response=> {
         this.allPolicyData=response;
@@ -29,25 +42,55 @@ export class DeletePolicyComponent implements OnInit {
   }
   deletePolicy(pid:number){
 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const deletePoint = 'http://localhost:8085/deletepolicy/'+pid;
 
-    alert("Ok it's Deleted")
+    // alert("Ok it's Deleted")
     // this.router.navigate(['viewPolicy']).then(()=>{
     //   window.location.reload();
     // });
+    
 
     
     this.httpClient.delete<number>(deletePoint).subscribe( response=> {
-      console.log(response);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: pid+ "id's insuorence  has been Deleted",
+        showConfirmButton: false,
+        timer: 2500
+      })
+      
+      setTimeout(()=>{
+        this.httpClient.get<any>('http://localhost:8085/getpolicys').subscribe(
+          response=> {
+            this.allPolicyData=response;
+            console.log(this.allPolicyData);
+            
+          })
+
+      },2500)
 
 
-      this.httpClient.get<any>('http://localhost:8085/getpolicys').subscribe(
-        response=> {
-          this.allPolicyData=response;
-          console.log(this.allPolicyData);
-          
-        })
-  
+
+
+
+ 
       
     })
   }

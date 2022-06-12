@@ -64,8 +64,41 @@ export class ViewadmisComponent implements OnInit {
 
   }
   openUpdate(){
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
       this.updateActive=true
   }
 
+
+ 
+
+  
+  updateLowerAdmin(adminid:number,adminname:string,adminemail:string,adminphno:string,admingender:string,adminaddress:string,adminage:string,adminpassword:string){
+
+
+      localStorage.setItem("naid",""+adminid);
+      localStorage.setItem("naname",adminname);
+      localStorage.setItem("naemail",adminemail);
+      localStorage.setItem("naphno",adminphno);
+      localStorage.setItem("nagender",admingender);
+      localStorage.setItem("naage",adminage);
+      localStorage.setItem("naaddress",adminaddress);
+      localStorage.setItem("napassword",adminpassword);
+
+
+
+      this.router.navigate(['upNewAdmin']);
+    
+
+
+  }
 
 }

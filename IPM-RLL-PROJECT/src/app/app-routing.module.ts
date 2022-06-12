@@ -34,6 +34,7 @@ import { RejectedPolicyHolderComponent } from './adminsuccesslogin/admin-policys
 import { WaitingpPolicyHolderComponent } from './adminsuccesslogin/admin-policys/waitingp-policy-holder/waitingp-policy-holder.component';
 import { PolicysViewByAdminComponent } from './adminsuccesslogin/admin-policys/policys-view-by-admin/policys-view-by-admin.component';
 import { ApplyUpdateComponent } from './adminsuccesslogin/admin-policys/update-policy/apply-update/apply-update.component';
+import { UpdateLowerAdminComponent } from './adminsuccesslogin/addAdminByAdmin/update-lower-admin/update-lower-admin.component';
 
 
 
@@ -200,6 +201,9 @@ const routes: Routes =[
       
     },{
       path:"editpolicy", component:ApplyUpdateComponent
+    },{
+
+      path:"upNewAdmin",component:UpdateLowerAdminComponent
     }
     
 

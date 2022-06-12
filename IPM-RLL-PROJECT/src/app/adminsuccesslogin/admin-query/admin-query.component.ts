@@ -13,13 +13,27 @@ export class AdminQueryComponent implements OnInit {
   constructor(private httpClient:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+
+
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    
+    }else{
+
     this.httpClient.get<any>('http://localhost:8085/findQuestionsBystatus').subscribe(
       response=> {
 
         this.allQueryData=response;
         console.log(this.allQueryData);
         
-      })
+      })}
 
    
 

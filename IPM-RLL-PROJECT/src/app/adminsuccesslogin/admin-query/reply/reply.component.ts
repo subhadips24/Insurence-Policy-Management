@@ -21,7 +21,13 @@ export class ReplyComponent implements OnInit {
 
   
   ngOnInit(): void {
+      if(localStorage.getItem('adminemail')===undefined){
 
+
+
+
+        this.router.navigate(['alog']);
+      }
     let rid=localStorage.getItem('replyid')
     this.id=Number(rid);
   }
@@ -51,12 +57,19 @@ export class ReplyComponent implements OnInit {
           
            Swal.fire('Sended 🚀', '', 'success')
            this.http.put<any>("http://localhost:8085/ans/"+this.id,this.questions).subscribe(responce=>{
-                this.router.navigate(['adminQuery']).then(
-                  ()=>{
 
-                    window.location.reload();
-                  }
-                )
+           setTimeout(()=>{
+                  
+
+            this.router.navigate(['adminQuery']).then(
+              ()=>{
+  
+                window.location.reload();
+                }
+                  )       
+
+           },3000)
+        
                 
  
  

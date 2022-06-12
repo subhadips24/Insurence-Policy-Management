@@ -30,6 +30,13 @@ export class AdminserviceService {
 
     return this.http.post<Admin>("http://localhost:8085/addadmin",admin);
   }
+  //Update Admin
+
+  adminUpdate(admin:Admin,id:number):Observable<Admin>{
+
+    return this.http.put<Admin>("http://localhost:8085/adminupdate/"+id,admin);
+  }
+
   //show Adminn By Email id...
 
   showAdminByEamil(email:any):Observable<Admin[]>{

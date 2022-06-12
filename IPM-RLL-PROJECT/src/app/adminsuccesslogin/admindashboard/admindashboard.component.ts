@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 
@@ -26,12 +27,24 @@ export class AdmindashboardComponent implements OnInit {
   countapllication!:number;
 
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private router:Router) { }
 
  
 
 
   ngOnInit(): void {
+
+
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }else{
 
       this.adminnName=localStorage.getItem("adminname")
 
@@ -86,6 +99,7 @@ export class AdmindashboardComponent implements OnInit {
           console.log(this.countPending);
           
         })
+      }
       
   }
 

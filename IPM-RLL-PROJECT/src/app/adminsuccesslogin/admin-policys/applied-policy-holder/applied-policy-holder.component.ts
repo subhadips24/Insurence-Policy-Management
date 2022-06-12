@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApplypolicieComponent } from '../../../applypolicie/applypolicie.component';
 import { ApplyPolicie } from '../../../classfile/ApplyPolicies/apply-policie';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-applied-policy-holder',
@@ -18,11 +20,23 @@ export class AppliedPolicyHolderComponent implements OnInit {
   allApplyData!:ApplyPolicie[]
   
   constructor(
-    private httpClient : HttpClient
+    private httpClient : HttpClient,
+    private router:Router
   ) { }
 
   public application=new ApplyPolicie();
   ngOnInit(): void {
+
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
       this.getData();
     }
 
@@ -55,12 +69,31 @@ export class AppliedPolicyHolderComponent implements OnInit {
 
     this.httpClient.put<ApplyPolicie>("http://localhost:8085/updatestatus/"+appid,this.application).subscribe(response=>{
       console.log(response);
-      this.getData();
-      alert("Status Updated")
+      //this.getData();
+     // alert("Status Updated")
+
+     Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: appid+' id has  status Chenge!.📢 ',
+      showConfirmButton: false,
+      timer: 2200
+    })
       
     },error=>{
       this.getData();
-      console.log(error);
+
+                                         
+
+     Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: appid+' id has been  '+
+      this.application.status+' 📢 ',
+      showConfirmButton: false,
+      timer: 2200
+    })
+     
     });
     // localStorage.setItem("appid",appid);
    }

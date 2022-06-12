@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Policye } from '../../../../classfile/Policy/policye';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-apply-update',
@@ -12,7 +14,7 @@ export class ApplyUpdateComponent implements OnInit {
   pid!:number
   public updateData = new Policye();
  
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,12 +24,36 @@ export class ApplyUpdateComponent implements OnInit {
     console.log(this.pid+" "+this.updateData.policycatagory);
     
     this.http.put<Policye>("http://localhost:8085/updatepolicy/"+Number(this.pid),this.updateData).subscribe(response=>{
-      console.log(response);
-      alert("Ok it Updated")
+    
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: this.pid+" id's has been Updated",
+        text:this.updateData.policyname+" has beend Saved",
+        showConfirmButton: false,
+        timer: 4500
+      })
+
+      setTimeout(()=>{
+
+              this.router.navigate(['updatePolicy']).then(
+
+                  ()=>{
+                    window.location.reload();
+                  }
+
+              )
+
+      },5200)
       
     },error=>{
-
-      console.log(error);
+            
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something Went Wrong please Wait ! 🤔'
+      })
     });
   }
 

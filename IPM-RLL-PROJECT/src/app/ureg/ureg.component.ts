@@ -14,12 +14,18 @@ export class UregComponent implements OnInit {
   user: User = new User();
   constructor(private reService:UserviceService,private  route: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+
+        this.user.cemail="";
+        this.user.cpassword="";
+
+  }
 
   UserReg() {
 
 
-        if(this.user.caddress===undefined || this.user.cage===undefined|| this.user.cemail===undefined||this.user.cgender===undefined||this.user.cname===undefined|| this.user.cpassword===undefined||this.user.cphno===undefined){
+        if(this.user.caddress===undefined || this.user.cage===undefined|| this.user.cemail===undefined||this.user.cgender===undefined||this.user.cname===undefined|| this.user.cpassword===undefined ||this.user.cpassword==="" ||this.user.cphno===undefined){
       
             console.warn(this.user);
             

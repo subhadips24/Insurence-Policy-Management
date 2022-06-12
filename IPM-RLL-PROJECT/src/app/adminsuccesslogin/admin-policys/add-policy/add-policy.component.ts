@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Policye } from '../../../classfile/Policy/policye';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-policy',
@@ -11,9 +13,19 @@ export class AddPolicyComponent implements OnInit {
 
   addData = new Policye();
 
-  constructor( public HttpClient:HttpClient) { }
+  constructor( public HttpClient:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
   }
 
   public addPolicy(addData:Policye) {
@@ -24,9 +36,22 @@ export class AddPolicyComponent implements OnInit {
   public addNow(){
     console.warn(this.addData);
     this.addPolicy(this.addData).subscribe(reply=>{
-      console.log(reply);
-    });
-    
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: this.addData.policycatagory+' has been Add',
+        showConfirmButton: false,
+        timer: 3500
+      })
+    },error=>{ 
+
+       Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something Went Wrong please Wait ! 🤔'
+          })
+      });
+      
   }
 
 }

@@ -18,6 +18,7 @@ export class ContactusComponent implements OnInit {
 
   sendSms(){
 
+    
     if(this.u.sms===undefined||this.u.ucustomername===undefined||this.u.usmsemail===undefined){
       
       Swal.fire({
@@ -44,7 +45,7 @@ export class ContactusComponent implements OnInit {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Sorry Some Backend Problem!! 👍',
+          text: 'lease Fill Up Every Field!!!!!✍️',
           
         })
 

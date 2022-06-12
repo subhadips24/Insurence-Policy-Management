@@ -19,6 +19,17 @@ export class AddnewadminComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
+
    this.mainadminEmail=localStorage.getItem('adminemail');
     
 

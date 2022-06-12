@@ -26,6 +26,9 @@ export class UserloginComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  reg(){
+    this.route.navigate(['ureg']);
+  }
 
   x:any;
 

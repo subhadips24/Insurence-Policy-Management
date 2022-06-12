@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-services-ipm',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesIpmComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routr:Router) { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+
+        this.routr.navigate(['ulog']);
   }
 
 }

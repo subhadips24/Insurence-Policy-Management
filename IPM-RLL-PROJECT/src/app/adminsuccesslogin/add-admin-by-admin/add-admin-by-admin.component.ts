@@ -11,6 +11,16 @@ export class AddAdminByAdminComponent implements OnInit {
   constructor(public router:Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
   }
 
   addadmin(){

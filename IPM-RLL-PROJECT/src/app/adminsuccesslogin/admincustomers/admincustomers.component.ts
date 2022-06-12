@@ -20,9 +20,21 @@ export class AdmincustomersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
+
+
+
+
+      this.router.navigate(['alog']).then(()=>{
+
+        window.location.reload();
+      })
+    }
+
     this.cs.getAllCustomers().subscribe(result=>{
       this.allCustomerData=result;
-      console.log(this.allCustomerData);
+     // console.log(this.allCustomerData);
       
     })
   }
@@ -30,10 +42,21 @@ export class AdmincustomersComponent implements OnInit {
    
     this.cs.deleteCustomer(cid);
      
-    Swal.fire(cid+' id has deleted')
-   this.router.navigateByUrl('/dashboard')//.then(()=>{
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: cid+" id's Data  Deleted! 💯",
+      showConfirmButton: false,
+      timer: 3500
+    })
+  //  this.router.navigateByUrl('/dashboard')//.then(()=>{
     //   window.location.reload()
     // });
+    setTimeout(()=>{this.cs.getAllCustomers().subscribe(result=>{
+      this.allCustomerData=result;
+     // console.log(this.allCustomerData);
+      
+    })},3000)
    
     
   }
