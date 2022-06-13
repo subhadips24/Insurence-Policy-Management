@@ -35,7 +35,7 @@ export class ReplyComponent implements OnInit {
   sendAns()
   {
  
-     if(this.questions.qanswer===undefined){
+     if(this.questions.qanswer===undefined||this.questions.qanswer===""||this.questions.qanswer===null){
        Swal.fire({
          icon: 'error',
          title: 'Oops...😠',
