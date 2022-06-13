@@ -50,7 +50,7 @@ export class UserloginComponent implements OnInit {
          localStorage.setItem('cpassword',dta.cpassword);
          localStorage.setItem('cemail',dta.cemail);
 
-
+        
          
        
         console.log(this.user);

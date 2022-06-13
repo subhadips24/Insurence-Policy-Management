@@ -19,6 +19,10 @@ export class AddnewadminComponent implements OnInit {
 
   ngOnInit(): void {
 
+      this.admin.adminemail="";
+      this.admin.adminpassword="";
+
+
     if(localStorage.getItem('adminemail')===undefined || localStorage.getItem('adminemail')===null ){
 
 
