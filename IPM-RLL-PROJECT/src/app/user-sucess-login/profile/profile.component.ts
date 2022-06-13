@@ -16,14 +16,25 @@ import Swal from 'sweetalert2';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(public userservice:UserviceService,public roter:Router) { }
+  constructor(public userservice:UserviceService,public roter:Router, private loginService:UserLoginService) { }
   public user=new User();
     email!:any;
+    pass!:any;
 
 
   ngOnInit(): void {
        this.email=localStorage.getItem('cemail');
        this.user.cemail=this.email;
+       this.pass=localStorage.getItem("cpassword");
+      this.user.cpassword=this.pass;
+      this.loginService.afterLoginData(this.user).subscribe((responce)=>{
+
+          this.user=responce;
+          this.user.cage=responce.cage;
+
+      })
+
+
        
 
   }
@@ -44,17 +55,18 @@ export class ProfileComponent implements OnInit {
       if (result.isConfirmed) {
 
           //Send Data
-          this.userservice.UpdtaeUser(this.user,this.user.cemail).subscribe((update=>{
+          this.userservice.UpdtaeUser(this.user,this.email).subscribe((update=>{
 
-        
-            this.roter.navigate(['ulog'])
+          
+              
+            //this.roter.navigate(['ulog'])
     }),error=>{
           // console.log(error);
           
           // alert("Somethibg Wrong with Server...Please Wait")
           // this.roter.navigate(['profile'])
 
-        
+          console.warn(this.user.cemail);
           this.roter.navigate(['ulog'])
           
           

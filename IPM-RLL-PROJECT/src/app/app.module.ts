@@ -51,6 +51,7 @@ import { WaitingpPolicyHolderComponent } from './adminsuccesslogin/admin-policys
 import { PolicysViewByAdminComponent } from './adminsuccesslogin/admin-policys/policys-view-by-admin/policys-view-by-admin.component';
 import { ApplyUpdateComponent } from './adminsuccesslogin/admin-policys/update-policy/apply-update/apply-update.component';
 import { UpdateLowerAdminComponent } from './adminsuccesslogin/addAdminByAdmin/update-lower-admin/update-lower-admin.component';
+import { PageErrorComponent } from './page-error/page-error.component';
 
 
 
@@ -101,6 +102,7 @@ import { UpdateLowerAdminComponent } from './adminsuccesslogin/addAdminByAdmin/u
     PolicysViewByAdminComponent,
     ApplyUpdateComponent,
     UpdateLowerAdminComponent,
+    PageErrorComponent,
   
   
   

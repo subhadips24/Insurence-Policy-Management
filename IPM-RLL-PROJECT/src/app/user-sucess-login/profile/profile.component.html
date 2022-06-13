@@ -1,93 +1,95 @@
 <app-navlogin></app-navlogin>
 
 
-<h1>User Update Profile</h1>
+<br><br>
+<br><br>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="box-form">
-      <div class="container">
-            <form (ngSubmit)="UserUpdate()">
-                  <div class="content">
-                    <div class="user-details">
-                      <div class="input-box">
-                        <span class="details">Full Name</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cname"
-                          name="cname"
-                          placeholder="Enter your name"
-                          required
-                          [(ngModel)]="user.cname"
-                        />
-                      </div>
-                      <div class="input-box">
-                        <span class="details">Phone Number</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="cphno"
-                          name="cphno"
-                          placeholder="Enter your number"
-                          required
-                          [(ngModel)]="user.cphno" 
-                        />
-                      </div>
-                      <div class="input-box">
-                        <span class="details">Password</span>
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="cpassword"
-                          placeholder="Enter your password"
-                          required
-                          [(ngModel)]="user.cpassword"
-                          name="cpassword"
-                        />
-                      </div>
-                    
-                      <div class="input-box">
-                        <span class="details">Address</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="caddress"
-                          name="caddress"
-                          placeholder="Enter your Address"
-                          required
-                          [(ngModel)]="user.caddress"
-                        />
-                      </div>
-                      <div class="input-box">
-                        <span class="details">Age</span>
-                        <input
-                          type="text"
-                          placeholder="Enter your Age"
-                          required
-                          [(ngModel)]="user.cage"
-                        />
-                      </div>
-                    </div>
-                    <div class="input-box">
-                      <span class="details">Gender</span>
+<div class="container ">
+  <h3 class="title text-center text-success mb-5">User Edit Profile</h3>
+  <form (ngSubmit)="updateService() ">
 
-                      <select
-                        name="users"
-                        [(ngModel)]="user.cgender"
-                        id="cgender"
-                        name="cgender"
-                      >
-                        <option value="">--Select--</option>
-                        <option value="MALE">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="NA">Prefer Not to Say</option>
-                      </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-3 p-2">Save It</button>
-                  </div>
-            </form>
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+
+        <label class="form-label">Full Name</label>
+      </div>
+
+      <div class="col-md-2">
+        <input classd="form-control" type="text" placeholder="Enter your name" requied [(ngModel)]="user.cname"
+          id="cname" name="cname">
       </div>
     </div>
-  </div>
+
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <label class="form-label">Email</label>
+      </div>
+      <div class="col-md-2">
+        <input classd="form-control" type="text" placeholder="Enter your email" required [(ngModel)]="user.cemail"
+          id="cemail" name="cemail">
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <label class="form-label">Phone Number</label>
+      </div>
+      <div class="col-md-2">
+        <input classd="form-control" type="text" placeholder="Enter your number" required [(ngModel)]="user.cphno"
+          id="cphno" name="cphno">
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <label class="form-label">Password</label>
+      </div>
+      <div class="col-md-2">
+        <input classd="form-control" type="text" placeholder="Enter your password" required
+          [(ngModel)]="user.cpassword" id="cpassword" name="cpassword">
+      </div>
+    </div>
+
+
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <label class="form-label">Address</label>
+      </div>
+      <div class="col-md-2">
+        <input classd="form-control" type="text" placeholder="Enter your Address" required [(ngModel)]="user.caddress"
+          id="caddress" name="caddress">
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <label class="form-label">Age</label>
+      </div>
+      <div class="col-md-2">
+
+        <input classd="form-control" type="text" placeholder="Enter your Age" [(ngModel)]="user.cage" id="cage"
+          name="cage">
+      </div>
+    </div>
+
+
+    <div class="row justify-content-center mb-2">
+      <div class="col-md-2">
+        <label class="form-label">Gender</label>
+      </div>
+      <div class="col-md-2">
+
+        <select [(ngModel)]="user.cgender" id="cgender" name="cgender">
+          <option value="">--Select--</option>
+          <option value="MALE">Male</option>
+          <option value="Female">Female</option>
+          <option value="NA">Prefer Not to Say</option>
+        </select>
+      </div>
+      
+      <input class="btn btn-success mt-3" type="submit" value="Update">
+    </div>
+
+
+  </form>
 </div>
