@@ -42,7 +42,7 @@ export class NavloginComponent implements OnInit {
     this.router.navigate(['policies'])
   }
   dashboard()  {
-      this.router.navigate(['ulog/sucessLogin'])
+      this.router.navigate(['udashboard']);
   }
   logout(){
     Swal.fire({

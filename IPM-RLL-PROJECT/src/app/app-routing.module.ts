@@ -142,7 +142,7 @@ const routes: Routes =[
 //Admin End
 
    {
-    path:"dashboard"
+    path:"udashboard"
     ,component:DashboardComponent
   },
   {
